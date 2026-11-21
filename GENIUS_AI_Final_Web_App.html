@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#10172a">
+<title>GENIUS AI — Learn. Improve. Achieve.</title>
+<style>
+:root{--bg:#0b1020;--panel:#121a2e;--panel2:#18233b;--line:#263451;--text:#edf3ff;--muted:#9aabc9;--blue:#7194ff;--cyan:#55d6d0;--purple:#ad8cff;--green:#63d7a2;--amber:#ffc56b}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 80% -10%,#25355b 0,transparent 34%),var(--bg);color:var(--text);font:15px/1.5 Inter,system-ui,Segoe UI,Arial,sans-serif}
+button,input,textarea,select{font:inherit}button{cursor:pointer}.app{display:grid;grid-template-columns:250px 1fr;min-height:100vh}
+.sidebar{background:#0d1426;border-right:1px solid var(--line);padding:24px 16px;position:sticky;top:0;height:100vh;overflow:auto}
+.brand{display:flex;align-items:center;gap:11px;padding:2px 9px 26px}.logo{width:39px;height:39px;border-radius:13px;background:linear-gradient(135deg,var(--blue),var(--cyan));display:grid;place-items:center;color:#071224;font-weight:900;font-size:20px}.brand strong{display:block;letter-spacing:1.3px}.brand small{color:var(--muted);font-size:11px;letter-spacing:1px}
+.nav-label{font-size:10px;color:#7082a5;font-weight:800;letter-spacing:1.5px;padding:15px 11px 7px}.nav button{width:100%;border:0;background:transparent;color:#aebbd4;text-align:left;padding:11px 12px;border-radius:11px;margin:2px 0;display:flex;gap:12px;align-items:center}.nav button:hover,.nav button.active{background:#1b2946;color:white}.nav button.active{box-shadow:inset 3px 0 var(--cyan)}.nav .ico{width:20px;text-align:center}
+.side-bottom{margin-top:30px;padding:14px;border:1px solid var(--line);border-radius:14px;background:#121c32}.side-bottom b{font-size:13px}.side-bottom p{color:var(--muted);font-size:12px;margin:5px 0 10px}
+main{padding:28px clamp(18px,4vw,48px) 60px;max-width:1500px;width:100%;margin:auto}.topbar{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:28px}.eyebrow{color:var(--cyan);font-size:11px;font-weight:800;letter-spacing:1.7px}.topbar h1{font-size:clamp(24px,3vw,34px);margin:4px 0 0;letter-spacing:-.8px}.profile{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:13px}.avatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#8b9dff,#4fd4c5);display:grid;place-items:center;color:#10172a;font-weight:900}
+.page{display:none}.page.active{display:block}.hero{border:1px solid #34466d;border-radius:22px;padding:28px;background:linear-gradient(115deg,#1b2a4a,#18253c 55%,#173b47);position:relative;overflow:hidden}.hero:after{content:"✦";position:absolute;right:7%;top:0;font-size:160px;color:#ffffff0b}.hero h2{font-size:clamp(23px,3vw,34px);margin:8px 0}.hero p{color:#c0cce2;max-width:560px;margin:0 0 20px}.btn{border:0;border-radius:10px;padding:10px 15px;background:linear-gradient(120deg,var(--blue),#7dbeff);color:#081226;font-weight:800}.btn.secondary{background:#263754;color:#eaf1ff;border:1px solid #3b4d70}.btn.ghost{background:transparent;border:1px solid var(--line);color:var(--text)}.btn:hover{filter:brightness(1.08)}
+.grid{display:grid;gap:16px}.stats{grid-template-columns:repeat(4,minmax(0,1fr));margin:18px 0 26px}.stat,.card{background:linear-gradient(145deg,#141e33,#111a2d);border:1px solid var(--line);border-radius:17px;padding:18px}.stat .label{font-size:12px;color:var(--muted)}.stat strong{font-size:27px;display:block;margin:4px 0}.stat small{color:var(--green);font-size:11px}.section-head{display:flex;justify-content:space-between;align-items:center;margin:26px 0 13px}.section-head h3{margin:0;font-size:18px}.section-head span{color:var(--muted);font-size:12px}.modules{grid-template-columns:repeat(3,minmax(0,1fr))}.module{cursor:pointer;transition:.2s}.module:hover{transform:translateY(-3px);border-color:#607bb5}.module .micon{font-size:23px;width:44px;height:44px;display:grid;place-items:center;border-radius:13px;background:#263756;margin-bottom:13px}.module h4{margin:0 0 5px;font-size:15px}.module p{color:var(--muted);font-size:12px;margin:0}.two{grid-template-columns:1.2fr .8fr}.progress{height:8px;background:#26334b;border-radius:20px;overflow:hidden;margin:9px 0}.progress span{height:100%;display:block;background:linear-gradient(90deg,var(--blue),var(--cyan));border-radius:20px}.task{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid #26334b}.task:last-child{border:0}.task input{accent-color:var(--cyan);width:17px;height:17px}.task label{flex:1}.task small{color:var(--muted)}
+.tool-layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:17px}.tool-main{min-width:0}.card h3{margin:0 0 5px}.muted{color:var(--muted)}.field{margin:14px 0}.field label{display:block;font-size:12px;color:#b9c8e1;margin-bottom:6px}.field input,.field textarea,.field select{width:100%;background:#0c1426;border:1px solid #31415f;border-radius:10px;padding:11px 12px;color:var(--text);outline:none}.field textarea{min-height:115px;resize:vertical}.field input:focus,.field textarea:focus{border-color:var(--blue)}.output{white-space:pre-wrap;background:#0b1425;border:1px solid #2b3a57;border-radius:12px;padding:14px;min-height:75px;color:#d9e5fa}.pill{display:inline-block;background:#263755;color:#bcd0ff;padding:4px 9px;border-radius:20px;font-size:11px;margin:3px}.flashcard{min-height:190px;display:grid;place-items:center;text-align:center;padding:24px;background:linear-gradient(145deg,#1d3154,#18243c);border:1px solid #3a5078;border-radius:18px;font-size:20px;cursor:pointer}.flashcard small{display:block;font-size:11px;color:var(--muted);margin-top:10px}.notice{padding:12px 14px;background:#302b20;border:1px solid #66512c;color:#f5d69d;border-radius:12px;font-size:12px;margin-top:14px}.table{width:100%;border-collapse:collapse;font-size:13px}.table td,.table th{text-align:left;padding:11px;border-bottom:1px solid var(--line)}.table th{color:var(--muted);font-weight:600}.mobile-menu{display:none}
+@media(max-width:900px){.app{grid-template-columns:1fr}.sidebar{height:auto;position:relative;padding:12px 14px;border-right:0;border-bottom:1px solid var(--line)}.brand{padding:0 5px 10px}.nav{display:flex;overflow:auto;gap:4px}.nav-label,.side-bottom{display:none}.nav button{white-space:nowrap;width:auto;padding:9px 11px}.nav button span:last-child{font-size:12px}.nav button.active{box-shadow:inset 0 -2px var(--cyan)}main{padding-top:20px}.tool-layout{grid-template-columns:1fr}}
+@media(max-width:620px){.stats{grid-template-columns:repeat(2,1fr)}.modules{grid-template-columns:repeat(2,minmax(0,1fr))}.two{grid-template-columns:1fr}.profile span{display:none}.hero{padding:22px}.stat{padding:14px}.stat strong{font-size:23px}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+ <div class="brand"><div class="logo">G</div><div><strong>GENIUS AI</strong><small>YOUR FUTURE, UNLOCKED</small></div></div>
+ <div class="nav-label">WORKSPACE</div>
+ <nav class="nav">
+  <button class="active" data-page="dashboard"><span class="ico">⌂</span><span>Dashboard</span></button>
+  <button data-page="tutor"><span class="ico">✦</span><span>AI Tutor</span></button>
+  <button data-page="mistake"><span class="ico">⌕</span><span>Mistake Detective</span></button>
+  <button data-page="notes"><span class="ico">▤</span><span>Notes Maker</span></button>
+  <button data-page="flashcards"><span class="ico">▣</span><span>Flashcards</span></button>
+  <button data-page="planner"><span class="ico">◷</span><span>Study Planner</span></button>
+  <button data-page="career"><span class="ico">⌘</span><span>Career Explorer</span></button>
+ </nav>
+ <div class="nav-label">YOUR PROGRESS</div>
+ <div class="side-bottom"><b>Keep your momentum ✨</b><p>Small steps every day lead to big results.</p><div class="progress"><span style="width:65%"></span></div><small class="muted">Demo progress · 65%</small></div>
+</aside>
+<main>
+ <header class="topbar"><div><div class="eyebrow">ONE STUDENT. ONE AI. COMPLETE FUTURE.</div><h1 id="pageTitle">Good morning, learner 👋</h1></div><div class="profile"><span>Student workspace</span><div class="avatar">S</div></div></header>
+ <section class="page active" id="dashboard">
+  <div class="hero"><div class="eyebrow">YOUR PERSONAL LEARNING SPACE</div><h2>Learn smarter. Grow stronger.</h2><p>One place to understand concepts, find learning gaps, revise effectively and explore your future.</p><button class="btn" onclick="showPage('tutor')">Start learning <span>→</span></button></div>
+  <div class="grid stats">
+   <div class="stat"><div class="label">Study streak</div><strong>🔥 4 days</strong><small>Build a steady habit</small></div>
+   <div class="stat"><div class="label">Learning XP</div><strong>1,250</strong><small>Demo points earned</small></div>
+   <div class="stat"><div class="label">Topics covered</div><strong>18</strong><small>Keep exploring</small></div>
+   <div class="stat"><div class="label">Weekly goal</div><strong>65%</strong><small>You're making progress</small></div>
+  </div>
+  <div class="section-head"><h3>Explore your toolkit</h3><span>Choose a module to begin</span></div>
+  <div class="grid modules">
+   <div class="card module" onclick="showPage('tutor')"><div class="micon">✦</div><h4>AI Tutor</h4><p>Ask questions and learn concepts step by step.</p></div>
+   <div class="card module" onclick="showPage('mistake')"><div class="micon">⌕</div><h4>Mistake Detective</h4><p>Review a solution and spot possible errors.</p></div>
+   <div class="card module" onclick="showPage('notes')"><div class="micon">▤</div><h4>Notes Maker</h4><p>Turn your text into organised revision notes.</p></div>
+   <div class="card module" onclick="showPage('flashcards')"><div class="micon">▣</div><h4>Flashcards</h4><p>Practise recall with quick flip cards.</p></div>
+   <div class="card module" onclick="showPage('planner')"><div class="micon">◷</div><h4>Study Planner</h4><p>Plan your tasks and track completion.</p></div>
+   <div class="card module" onclick="showPage('career')"><div class="micon">⌘</div><h4>Career Explorer</h4><p>Explore skills, pathways and opportunities.</p></div>
+  </div>
+  <div class="grid two">
+   <div><div class="section-head"><h3>Today's focus</h3><span>Demo checklist</span></div><div class="card" id="dashTasks"><div class="task"><input type="checkbox"><label>Revise one important concept</label><small>15 min</small></div><div class="task"><input type="checkbox"><label>Practise 5 questions</label><small>20 min</small></div><div class="task"><input type="checkbox"><label>Review yesterday's notes</label><small>10 min</small></div></div></div>
+   <div><div class="section-head"><h3>Learning tip</h3></div><div class="card"><div class="micon">💡</div><b>Try active recall</b><p class="muted">Close your book and explain a concept in your own words. Then check what you missed.</p></div></div>
+  </div>
+ </section>
+ <section class="page" id="tutor">
+  <div class="section-head"><h3>✦ AI Tutor</h3><span class="pill">Interactive demo</span></div>
+  <div class="tool-layout"><div class="card tool-main"><p class="muted">Ask a study question. This prototype gives a guided sample response; connect an AI service for real AI answers.</p>
+   <div class="field"><label>Subject</label><select id="tutorSubject"><option>Mathematics</option><option>Physics</option><option>Chemistry</option><option>Accountancy</option><option>Business Studies</option><option>English</option><option>Computer Science</option></select></div>
+   <div class="field"><label>Your question</label><textarea id="tutorQuestion" placeholder="e.g. Explain Newton's second law with an example..."></textarea></div>
+   <button class="btn" onclick="askTutor()">Explain this</button>
+   <div class="section-head"><h3>Learning response</h3></div><div class="output" id="tutorOutput">Your explanation will appear here.</div>
+  </div><aside class="card"><h3>How to get better answers</h3><p class="muted">Include your class, chapter and what part is confusing.</p><span class="pill">Simple explanation</span><span class="pill">Step-by-step</span><span class="pill">Examples</span><div class="notice">Demo mode: no question is sent to an external AI service.</div></aside></div>
+ </section>
+ <section class="page" id="mistake">
+  <div class="section-head"><h3>⌕ Mistake Detective</h3><span class="pill">Solution review demo</span></div>
+  <div class="tool-layout"><div class="card tool-main"><p class="muted">Paste a question and your working. The demo checks for common learning gaps, not a guaranteed correctness verdict.</p>
+   <div class="field"><label>Question</label><textarea id="mdQuestion" placeholder="Write the original question..."></textarea></div>
+   <div class="field"><label>Your solution / answer</label><textarea id="mdAnswer" placeholder="Paste your steps here..."></textarea></div>
+   <button class="btn" onclick="detectMistake()">Review my work</button><div class="section-head"><h3>Review notes</h3></div><div class="output" id="mdOutput">Your review will appear here.</div>
+  </div><aside class="card"><h3>Detective checklist</h3><p class="muted">Before submitting, check:</p><p>✓ Did you copy the given values correctly?</p><p>✓ Did you choose the right formula?</p><p>✓ Are units and signs correct?</p><p>✓ Does your final answer make sense?</p></aside></div>
+ </section>
+ <section class="page" id="notes">
+  <div class="section-head"><h3>▤ Notes Maker</h3><span class="pill">Local text tool</span></div>
+  <div class="card"><p class="muted">Paste chapter content and create a clean revision outline. This uses simple text formatting, not AI summarisation.</p><div class="field"><label>Chapter / topic title</label><input id="noteTitle" placeholder="e.g. Principles of Management"></div><div class="field"><label>Study content</label><textarea id="noteInput" style="min-height:180px" placeholder="Paste your class notes or key points here..."></textarea></div><button class="btn" onclick="makeNotes()">Organise my notes</button> <button class="btn secondary" onclick="copyNotes()">Copy notes</button><div class="section-head"><h3>Revision notes</h3></div><div class="output" id="noteOutput">Your organised notes will appear here.</div></div>
+ </section>
+ <section class="page" id="flashcards">
+  <div class="section-head"><h3>▣ Flashcards</h3><span class="pill">Active recall</span></div>
+  <div class="grid two"><div class="card"><p class="muted">Tap the card to reveal the answer.</p><div class="flashcard" id="flashcard" onclick="flipCard()">What is photosynthesis?<small>Tap to reveal answer</small></div><div style="display:flex;justify-content:space-between;margin-top:14px"><button class="btn secondary" onclick="prevCard()">← Previous</button><span class="muted" id="cardCount">1 / 5</span><button class="btn" onclick="nextCard()">Next →</button></div></div><div class="card"><h3>Make a flashcard</h3><div class="field"><label>Question / front</label><input id="fcQ" placeholder="Enter a question"></div><div class="field"><label>Answer / back</label><textarea id="fcA" placeholder="Enter the answer"></textarea></div><button class="btn" onclick="addCard()">Add card</button><p class="muted">Cards stay in this browser session only.</p></div></div>
+ </section>
+ <section class="page" id="planner">
+  <div class="section-head"><h3>◷ Study Planner</h3><span class="pill">Interactive checklist</span></div>
+  <div class="grid two"><div class="card"><h3>Build today's plan</h3><div class="field"><label>Study task</label><input id="taskInput" placeholder="e.g. Revise Chapter 2"></div><div class="field"><label>Time estimate</label><select id="taskTime"><option>15 min</option><option>30 min</option><option>45 min</option><option>1 hour</option></select></div><button class="btn" onclick="addTask()">Add to plan</button><div class="section-head"><h3>Your tasks</h3><span id="taskProgress">0 completed</span></div><div id="taskList"><div class="task"><input type="checkbox" onchange="updateTaskCount()"><label>Revise one topic</label><small>30 min</small></div><div class="task"><input type="checkbox" onchange="updateTaskCount()"><label>Practise questions</label><small>45 min</small></div></div></div><div class="card"><h3>Study routine</h3><p class="muted">A simple rhythm to try:</p><div class="task"><b>01</b><label>Focus session</label><small>25 min</small></div><div class="task"><b>02</b><label>Short break</label><small>5 min</small></div><div class="task"><b>03</b><label>Recall & review</label><small>10 min</small></div><div class="notice">Adjust study time to your needs. Breaks are part of effective learning.</div></div></div>
+ </section>
+ <section class="page" id="career">
+  <div class="section-head"><h3>⌘ Career Explorer</h3><span class="pill">Explore pathways</span></div>
+  <div class="hero"><div class="eyebrow">THINK BEYOND THE CLASSROOM</div><h2>Your interests can shape your next step.</h2><p>Explore broad pathways, learn about skills and talk to teachers or trusted adults before making important education decisions.</p></div>
+  <div class="grid modules" style="margin-top:17px">
+   <div class="card"><div class="micon">💻</div><h4>Software & Technology</h4><p>Programming, web development, cybersecurity fundamentals and software design.</p><span class="pill">Logic</span><span class="pill">Coding</span></div>
+   <div class="card"><div class="micon">🧪</div><h4>Science & Research</h4><p>Explore scientific questions through experiments, mathematics and research.</p><span class="pill">Curiosity</span><span class="pill">Analysis</span></div>
+   <div class="card"><div class="micon">📊</div><h4>Business & Finance</h4><p>Understand organisations, accounting, markets and entrepreneurship.</p><span class="pill">Planning</span><span class="pill">Communication</span></div>
+   <div class="card"><div class="micon">🎨</div><h4>Design & Media</h4><p>Visual communication, user experience, storytelling and creative technology.</p><span class="pill">Creativity</span><span class="pill">Design</span></div>
+   <div class="card"><div class="micon">🩺</div><h4>Healthcare</h4><p>Learn about health sciences, patient care and the many roles in healthcare.</p><span class="pill">Science</span><span class="pill">Empathy</span></div>
+   <div class="card"><div class="micon">⚙️</div><h4>Engineering</h4><p>Apply maths and science to design, build and improve real-world systems.</p><span class="pill">Problem solving</span><span class="pill">Design</span></div>
+  </div>
+  <div class="notice">Career and college information in this prototype is introductory only. It does not predict admission, placement or future earnings. Verify current requirements with official institutions.</div>
+ </section>
+ <footer style="margin-top:35px;padding-top:18px;border-top:1px solid var(--line);color:#7183a5;font-size:11px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap"><span>GENIUS AI · Education to Career Platform</span><span>Prototype v1.0 · Demo data only</span></footer>
+</main>
+</div>
+<script>
+const titles={dashboard:"Good morning, learner 👋",tutor:"AI Tutor",mistake:"Mistake Detective",notes:"Notes Maker",flashcards:"Flashcards",planner:"Study Planner",career:"Career Explorer"};
+function showPage(id){document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id===id));document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===id));document.getElementById('pageTitle').textContent=titles[id]||"GENIUS AI";window.scrollTo({top:0,behavior:'smooth'})}
+document.querySelectorAll('.nav button').forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.page)));
+function askTutor(){let q=document.getElementById('tutorQuestion').value.trim(),s=document.getElementById('tutorSubject').value,o=document.getElementById('tutorOutput');if(!q){o.textContent="Please enter a question first.";return}o.textContent=`Subject: ${s}\n\nLet's break your question into smaller parts:\n1. Identify the main concept involved.\n2. Write down the facts or information given.\n3. Connect those facts to the relevant rule, formula or idea.\n4. Work through one step at a time and check the result.\n\nYour question: ${q}\n\nThis is a guided demo response, not an AI-generated subject answer. Connect a trusted AI API to enable personalised explanations.`}
+function detectMistake(){let q=document.getElementById('mdQuestion').value.trim(),a=document.getElementById('mdAnswer').value.trim(),o=document.getElementById('mdOutput');if(!q||!a){o.textContent="Please add both the question and your working.";return}let checks=[];if(!/\d/.test(a))checks.push("If this is a numerical problem, check whether you have shown the required values and calculations.");if(!/(=|therefore|∴|hence)/i.test(a))checks.push("Make each reasoning step clear and show how you reached the conclusion.");if(!/(unit|cm|m|kg|s|₹|%)/i.test(a))checks.push("If units apply, include them in the final answer.");checks.push("Compare each step with the question and verify the formula or concept used.");o.textContent="Review checklist\n\n"+checks.map((x,i)=>(i+1)+". "+x).join("\n")+"\n\nQuestion received: "+q+"\n\nThis prototype does not solve or verify the answer. Ask a teacher or use a fully connected subject-aware checker for a correctness review."}
+function makeNotes(){let t=document.getElementById('noteTitle').value.trim()||"Untitled topic",v=document.getElementById('noteInput').value.trim(),o=document.getElementById('noteOutput');if(!v){o.textContent="Paste some study content first.";return}let lines=v.split(/\n|(?<=[.!?])\s+/).map(x=>x.trim()).filter(Boolean);o.textContent=t.toUpperCase()+"\n"+"=".repeat(Math.min(t.length,45))+"\n\nKEY POINTS\n"+lines.map((x,i)=>(i+1)+". "+x).join("\n")+"\n\nREVISION TIP\nTry explaining each point from memory, then check your notes."}
+function copyNotes(){let t=document.getElementById('noteOutput').textContent;if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(()=>alert("Notes copied." )).catch(()=>alert("Copy is not available in this browser."))}else alert("Clipboard is not available in this browser.")}
+let cards=[{q:"What is photosynthesis?",a:"The process by which green plants use light energy to make food from carbon dioxide and water."},{q:"What is a prime number?",a:"A whole number greater than 1 with exactly two factors: 1 and itself."},{q:"What does CPU stand for?",a:"Central Processing Unit."},{q:"What is an asset in accounting?",a:"A resource controlled by a business from which future economic benefits are expected."},{q:"What is Newton's second law?",a:"The net force on an object equals its mass multiplied by its acceleration: F = ma."}];let ci=0,flipped=false;
+function renderCard(){let c=cards[ci];document.getElementById('flashcard').innerHTML=(flipped?c.a:c.q)+'<small>'+(flipped?'Tap to see question':'Tap to reveal answer')+'</small>';document.getElementById('cardCount').textContent=(ci+1)+' / '+cards.length}
+function flipCard(){flipped=!flipped;renderCard()}function nextCard(){ci=(ci+1)%cards.length;flipped=false;renderCard()}function prevCard(){ci=(ci-1+cards.length)%cards.length;flipped=false;renderCard()}function addCard(){let q=document.getElementById('fcQ').value.trim(),a=document.getElementById('fcA').value.trim();if(!q||!a){alert("Enter both a question and an answer.");return}cards.push({q,a});ci=cards.length-1;flipped=false;renderCard();document.getElementById('fcQ').value="";document.getElementById('fcA').value=""}renderCard();
+function addTask(){let v=document.getElementById('taskInput').value.trim();if(!v)return;let d=document.createElement('div');d.className='task';let cb=document.createElement('input');cb.type='checkbox';cb.addEventListener('change',updateTaskCount);let label=document.createElement('label');label.textContent=v;let sm=document.createElement('small');sm.textContent=document.getElementById('taskTime').value;d.append(cb,label,sm);document.getElementById('taskList').append(d);document.getElementById('taskInput').value="";updateTaskCount()}
+function updateTaskCount(){let all=[...document.querySelectorAll('#taskList input[type=checkbox]')];let done=all.filter(x=>x.checked).length;document.getElementById('taskProgress').textContent=done+' / '+all.length+' completed'}
+</script>
+</body></html>
